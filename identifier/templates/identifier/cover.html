@@ -1,0 +1,103 @@
+{% load static %}
+
+<!--<!doctype html>-->
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Supra AI">
+<!--    <meta name="generator" content="Jekyll v4.1.1">-->
+    <title>implantify (developing)</title>
+
+<!--    '오리지널 페이지'를 가리킴-->
+    <link rel="canonical" href="https://implantify.io">
+
+
+   <!-- Bootstrap core CSS -->
+    <link href="{% static 'identifier/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'identifier/css/cover.css' %}" rel="stylesheet">
+
+  </head>
+
+
+
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand"><a href="..">Cover</a></h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="..">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+
+      <main role="main" class="inner cover">
+<!--        <h1 class="cover-heading">Cover your page.</h1>-->
+<!--        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>-->
+<!--        <p class="lead">-->
+<!--          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>-->
+<!--        </p>-->
+
+        <h1 class="m-5">임플란트 식별(Identification)</h1>
+
+        <!--        <form> 태그의 action 속성은 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 URL을 명시합니다.-->
+        <form method="post" enctype="multipart/form-data" action="predictImage">
+          {% csrf_token %}
+            <br>
+
+<!--          <div class="col-md-4 col-sm-4">-->
+            <label for="fname">업로드할 이미지를 선택하세요:</label>
+            &nbsp;
+            <input name="filePath" type="file">
+<!--          </div>-->
+            <br>
+          <br><br>
+          <input type="submit" value="자동 식별 시작">
+          <br>
+          <br>
+          <img src=/media/{{filePathName}} alt='imagename'>
+
+        </form>
+      </main>
+
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          ⓒ 2020 by <a href="http://letsgo247.net/contact.html" target="_blank">Supra AI</a>. All Rights Reserved
+        </div>
+      </footer>
+
+
+    </div>
+
+  </body>
+
+</html>
