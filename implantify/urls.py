@@ -25,6 +25,8 @@ urlpatterns = [
     # url('^$', views.index, name='index'),
     url('^$', views.cover, name='cover'),
     url('predictImage', views.predictImage, name='predictImage'),
+    url('detection_cover', views.detection_cover, name='detection_cover'),
+    url('detection_result', views.detection_result, name='detection_result')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

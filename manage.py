@@ -2,6 +2,9 @@
 import os
 import sys
 
+sys.path.append("./yolov5")     # module 로드할 때 굳이 yolov5 안 붙여도 되도록!
+
+
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'implantify.settings')
     try:

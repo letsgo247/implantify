@@ -4,21 +4,20 @@
 
 <main role="main" class="inner cover">
 
-  <h1 class="m-5">임플란트 모델 찾기<br>(Implant Identification)</h1>
+  <h1 class="m-5">임플란트 인식<br>(Implant Detection)</h1>
 
 
   <!--        <form> 태그의 action 속성은 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 URL을 명시합니다.-->
-  <form method="post" enctype="multipart/form-data" action="predictImage">
+  <form method="post" enctype="multipart/form-data" action="detection_result">
     {% csrf_token %}
 
     <input class="border border-light m-3" name="filePath" type="file">
     <br>
     <label class="text-secondary m-5">임플란트 X-ray 사진을 업로드해주세요</label>
     <br>
-    <input class="btn btn-success m-3" type="submit" value="자동 식별 시작">
+    <input class="btn btn-warning m-3" type="submit" value="자동 인식 시작">
 
   </form>
-
 
 
 </main>

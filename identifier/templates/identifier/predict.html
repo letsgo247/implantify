@@ -10,9 +10,11 @@
   <!--        <form> 태그의 action 속성은 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 URL을 명시합니다.-->
   <form method="post" enctype="multipart/form-data" action="predictImage">
     {% csrf_token %}
+
     <p class="text-muted m-3">{{file_name}}</p>
     <img src={{image_path}} alt='imagename' height="300">
-    <h3 class="m-4">예측된 임플란트 모델명은 <span class="text-warning font-weight-bold">{{predictedLabel}}</span> 입니다<br><p class="text-muted m-2">(예측신뢰도 {{predictReliability}}%)</p></h3>
+    <h3 class="m-4">예측된 임플란트 모델명은 <span class="text-warning font-weight-bold">{{predictedLabel}}</span> 입니다<br>
+    <p class="text-muted m-2">(예측신뢰도 {{predictReliability}}%)</p></h3>
     <button class="btn btn-info m-4"><a href="..">처음으로</a></button>
 
   </form>

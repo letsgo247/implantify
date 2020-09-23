@@ -1,0 +1,16 @@
+{% extends 'identifier/base.html' %}
+
+{% block content %}
+
+<main role="main" class="inner cover">
+
+  <h1 class="m-5">임플란트 자동 인식 결과 (Detection Result)</h1>
+
+  <p class="text-muted m-3">{{file_name}}</p>
+  <img src={{output_path}} alt='detection_result' style="max-width: 100%; height: auto;">
+<!--  <h3 class="m-4">인식된 임플란트는 총 <span class="text-warning font-weight-bold">{{predictedLabel}}</span>개 입니다<br><p class="text-muted m-2">(예측신뢰도 {{predictReliability}}%)</p></h3>-->
+  <button class="btn btn-info m-4"><a href="..">처음으로</a></button>
+
+</main>
+
+{% endblock %}
