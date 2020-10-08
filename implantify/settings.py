@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      # 지금 이 파일의 경로의 상위의 상위 디렉토리까지의 path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      # 지금 이 파일의 경로의 상위의 상위 디렉토리까지의 path 획득
 
 
 # Quick-start development settings - unsuitable for production

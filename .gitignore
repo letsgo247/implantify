@@ -1,5 +1,7 @@
 #*.pyc
 #*~
 #__pycache__
+test.py
 .idea/
 Chuns_split/
+AWS/

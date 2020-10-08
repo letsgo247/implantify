@@ -20,16 +20,24 @@ import os
 
 
 
+# default = Identification cover
 def cover(request):
     context={'a':1}
     return render(request, 'identifier/cover.html', context)
 
 
 
+# Detection cover
 def detection_cover(request):
     context={'a':1}
     return render(request, 'identifier/detection_cover.html', context)
 
+
+
+
+
+
+### Detection Part ###
 
 from urllib import parse
 
@@ -74,12 +82,19 @@ def detection_result(request):
 
 
 
-img_height, img_width = 150, 150
-# with open('models/classes.txt','r') as f:
-#     labelInfo = f.read()
-labels = ['GS3', 'SS', 'TS mini', 'TS3', 'TS4']
 
-model = load_model('models/InceptionResNetV2_epoch_1000.h5')
+
+### Identification Part ###
+
+img_height, img_width = 150, 150
+
+# classes.txt 로부터 읽어와서 정렬해서 자동으로 labels list 생성!
+with open('models/classes.txt', 'r') as f:
+    labels = [line.strip() for line in f]
+labels.sort()
+print(labels)
+
+model = load_model('models/InceptionResNetV2_chuns_split_2_epoch_1100.h5')
 
 
 def predictImage(request):
@@ -98,7 +113,7 @@ def predictImage(request):
     image_array = image_array.reshape((1, img_height, img_width, 3))
     preprocessed_image_array = preprocess_input(image_array)
 
-    prediction = model.predict(preprocessed_image_array)[0]
+    prediction = model.predict(preprocessed_image_array)[0]     # load 된 model로 prediction 출력
     idx = np.argmax(prediction)
     predictedLabel = labels[idx]
     predictReliability = round(prediction[idx]*100, 2)
