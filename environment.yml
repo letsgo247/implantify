@@ -285,4 +285,4 @@ dependencies:
     - tensorflow==2.3.0
     - tensorflow-estimator==2.3.0
     - termcolor==1.1.0
-prefix: C:\Dev\Anaconda3\envs\implantify
+prefix: C:\Users\letsg\anaconda3\envs\implantify
